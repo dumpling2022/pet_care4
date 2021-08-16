@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/image_overlay2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorBeeYellow">
+
+        <ImageButton
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:background="#00000000"/>
+
+    </RelativeLayout>
+
+
+
+
+
+    <GridLayout
+
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="1"
+        android:rowCount="3"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        >
+
+
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            android:layout_margin="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true">
+
+            <RelativeLayout
+                android:id="@+id/cat"
+                android:background="@drawable/plant"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/image_overlay"
+                >
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고양이들이 주의해야 할 식물들"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            android:layout_margin="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_marginTop="-6dp">
+
+            <RelativeLayout
+                android:id="@+id/servant"
+                android:background="@drawable/cat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/image_overlay"
+                >
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고양이의 행동"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            android:layout_margin="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_marginTop="-6dp">
+
+            <RelativeLayout
+                android:id="@+id/plant"
+                android:background="@drawable/person"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/image_overlay"
+                >
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="집사들이 주의해야 할 행동"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+    </GridLayout>
+
+</RelativeLayout>
