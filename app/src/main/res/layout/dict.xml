@@ -3,13 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/image_overlay2">
-
+    android:background="@color/lightWhite">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorBeeYellow">
-
+        android:layout_height="40dp">
         <ImageButton
             android:id="@+id/menu"
             android:layout_width="wrap_content"
@@ -37,7 +34,7 @@
         >
 
 
-
+        <!--        이 카드뷰 클릭시 plant.xml로 전환됨-->
         <androidx.cardview.widget.CardView
 
             android:layout_width="match_parent"
@@ -74,6 +71,8 @@
 
         </androidx.cardview.widget.CardView>
 
+
+        <!--        이 카드뷰 클릭시 cat.xml로 전환됨-->
         <androidx.cardview.widget.CardView
 
             android:layout_width="match_parent"
@@ -110,6 +109,8 @@
         </androidx.cardview.widget.CardView>
 
 
+
+<!--        이 카드뷰 클릭시 people.xml로 전환됨-->
         <androidx.cardview.widget.CardView
 
             android:layout_width="match_parent"

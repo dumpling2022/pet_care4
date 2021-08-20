@@ -10,6 +10,8 @@
     <include layout="@layout/toolbar"/>
 
 
+<!--    네비게이션바에서 home은 현재화면이고 Dict는 dict.xml로 클릭시 화면전환-->
+<!--, Cal은 cal.xml로 화면전환    -->
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
