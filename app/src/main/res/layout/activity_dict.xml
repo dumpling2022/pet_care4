@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools">
+    android:padding="12dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp">
+
         <ImageButton
             android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_menu_24"
-            android:background="#00000000"/>
+            android:background="#00000000"
+            android:src="@drawable/ic_baseline_menu_24" />
 
     </RelativeLayout>
 
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="43dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="43dp"
         android:layout_marginRight="12dp"
 
-        android:background="@drawable/nav_bg"/>
+        android:background="@drawable/nav_bg" />
 
 
     <HorizontalScrollView
-        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,17 +55,17 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="4dp"
+                    android:background="@drawable/selector_color_search_menu"
                     android:clickable="true"
-                    app:cardCornerRadius="16dp"
-                    android:background="@drawable/selector_color_search_menu">
+                    app:cardCornerRadius="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
                         android:text="집사의 사전"
-                        android:textSize="18dp"
                         android:textColor="@color/colorGray"
-                        android:padding="8dp"/>
+                        android:textSize="18dp" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -73,17 +76,17 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="4dp"
+                    android:background="@drawable/selector_color_search_menu"
                     android:clickable="true"
-                    app:cardCornerRadius="16dp"
-                    android:background="@drawable/selector_color_search_menu">
+                    app:cardCornerRadius="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
                         android:text="고양이의 사전"
-                        android:textSize="18dp"
                         android:textColor="@color/colorGray"
-                        android:padding="8dp"/>
+                        android:textSize="18dp" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -93,18 +96,18 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardCornerRadius="16dp"
                     android:layout_margin="4dp"
+                    android:background="@drawable/selector_color_search_menu"
                     android:clickable="true"
-                    android:background="@drawable/selector_color_search_menu">
+                    app:cardCornerRadius="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
                         android:text="식물 사전"
-                        android:textSize="18dp"
                         android:textColor="@color/colorGray"
-                        android:padding="8dp"/>
+                        android:textSize="18dp" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -115,17 +118,17 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="4dp"
-                    app:cardCornerRadius="16dp"
+                    android:background="@drawable/selector_color_search_menu"
                     android:clickable="true"
-                    android:background="@drawable/selector_color_search_menu">
+                    app:cardCornerRadius="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
                         android:text="식물종류 알아보기"
-                        android:textSize="18dp"
                         android:textColor="@color/colorGray"
-                        android:padding="8dp"/>
+                        android:textSize="18dp" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -134,11 +137,51 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <ListView
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="160dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:padding="16dp">
 
+        <ImageView
+            android:id="@+id/coverImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/background_gray_stroke"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/coverImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="양치질 습관" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            tools:text="주요 내용" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

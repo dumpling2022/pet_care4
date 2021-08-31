@@ -21,3 +21,5 @@
         app:cnb_backgroundColor="@color/colorWhiteGray"/>
 
 </menu>
+
+<!--네비게이션바에 사용되는 버튼들 목록-->

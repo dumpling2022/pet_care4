@@ -19,7 +19,7 @@ allprojects {
         maven { url 'https://jitpack.io' }
         google()
         maven {
-            url 'https://naver.jfrog.io/artifactory/maven/'
+            url 'https://naver.jfrog.io/artifactory/maven/' //네이버 지도 api주소
         }
         mavenCentral()
 

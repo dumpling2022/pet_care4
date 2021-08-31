@@ -8,12 +8,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
     private val imageUser : ImageView by lazy {
+        findViewById(R.id.imgUser)
+    }
+
+    private val imageView:ImageView by lazy {
         findViewById(R.id.imgUser)
     }
 
@@ -46,7 +51,6 @@ class MainActivity : AppCompatActivity() {
                     this,
                     android.Manifest.permission.READ_EXTERNAL_STORAGE
                 ) == PackageManager.PERMISSION_GRANTED -> {
-
                 }
                 shouldShowRequestPermissionRationale(android.Manifest.permission.READ_EXTERNAL_STORAGE) ->{
                     showPermissionContextPopup()
@@ -61,6 +65,38 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
+    //사진 가져오기
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        when(requestCode) {
+            1000 -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    navigationPhotos()
+
+                } else {
+                    Toast.makeText(this, "권한을 거부하셨습니다", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun navigationPhotos(){
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+        startActivityForResult(intent, 2000)
+    }
+
+
+
+
+    //권한 요청및 메세지
 
     private fun showPermissionContextPopup(){
         AlertDialog.Builder(this)

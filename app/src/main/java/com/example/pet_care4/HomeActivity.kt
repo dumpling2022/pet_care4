@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.pet_care4.HomeActivity as HomeActivity
 
 
 class HomeActivity : AppCompatActivity() {
@@ -13,10 +14,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val homeFragment = HomeFragment()
         val calFragment = CalFragment()
-        val dictFragment = DictFragment()
-        val settingsButton : ImageButton = findViewById(R.id.settings)
+        val settingsButton : ImageButton = findViewById(R.id.settings) //프로필 수정이나 지도등
 
         settingsButton.setOnClickListener(){
             val intent = Intent(this, Settings::class.java)
@@ -26,14 +25,23 @@ class HomeActivity : AppCompatActivity() {
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-        replaceFragment(homeFragment)
+
+
 
         bottomNavigationView.setOnItemSelectedListener{
 
+            val intent2 = Intent(this, HomeActivity::class.java)
+            val intent3 = Intent(this, DictActivity::class.java)
+
+
             when(it.itemId){
-                R.id.bottom_nav_home -> replaceFragment(homeFragment)
+                R.id.bottom_nav_home -> startActivity(intent2)
+                R.id.bottom_nav_dic -> startActivity(intent3)
+            }
+
+
+            when(it.itemId){
                 R.id.bottom_nav_calender ->  replaceFragment(calFragment)
-                R.id.bottom_nav_dic -> replaceFragment(dictFragment)
             }
             true
         }

@@ -2,10 +2,8 @@ package com.example.pet_care4
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.naver.maps.map.MapFragment
 
 class Settings : AppCompatActivity() {
 
@@ -15,10 +13,16 @@ class Settings : AppCompatActivity() {
 
 
         val buttonMap: ConstraintLayout = findViewById(R.id.Map)
+        val setProfile: ConstraintLayout = findViewById(R.id.setProfile)
 
         buttonMap.setOnClickListener() {
-            val intent = Intent(this, MapFragment::class.java)
+            val intent = Intent(this, NaverMapActivity::class.java)
             startActivity(intent)
+        }
+
+        setProfile.setOnClickListener(){
+            val intent2 = Intent(this, MainActivity::class.java)
+            startActivity(intent2)
         }
 
     }

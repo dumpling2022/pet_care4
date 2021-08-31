@@ -15,17 +15,20 @@
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="9xbfj2ujgp" />
+            android:value="9xbfj2ujgp" /> <!--네이버 클라이언트 아이디-->
 
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".DictActivity"/> <!--사용되는 액티비티들-->
         <activity android:name=".Settings"/>
-
+        <activity android:name=".NaverMapActivity"/>
 
 
         

@@ -54,6 +54,8 @@
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setProfile"
+            android:clickable="true"
             android:layout_margin="16dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
